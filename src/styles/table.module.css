@@ -1,0 +1,24 @@
+.tableWrapper {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableRow {
+    background-color: #f2f2f2
+}
+
+.tableHeader {
+    padding: 12px;
+    border: 1px solid #ddd
+}
+
+.tableData{
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
