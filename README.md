@@ -31,13 +31,13 @@ If you are using npm:
 ```bash
 npm install
 ```
-If you are using yarn
+If you are using yarn:
 ```bash
 yarn install
 
 ```
 
-Run the Development Server
+Run the Development Server:
 
 ```bash
 npm run dev
