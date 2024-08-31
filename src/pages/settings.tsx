@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { settingsConfig } from "@/utils/constant";
+import styles from "../styles/settings.module.css";
+import { IoArrowBackSharp } from "react-icons/io5";
 
 const Settings = () => {
   const router = useRouter();
@@ -8,6 +10,7 @@ const Settings = () => {
     showWeatherChart: true,
     showCompanyChart: true,
     showMarketShareChart: true,
+    showExpenseDonutChart: true,
     showTable: true,
   });
 
@@ -31,25 +34,34 @@ const Settings = () => {
     router.push("/");
   };
 
+  const handleBack = () => {
+    router.back();
+  };
+
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Dashboard Settings</h2>
-      {settingsConfig.map((setting) => (
-        <div key={setting.name}>
-          <label>
-            <input
-              type="checkbox"
-              name={setting.name}
-              checked={settings[setting.name as keyof typeof settings]}
-              onChange={handleChange}
-            />
-            {setting.label}
-          </label>
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <div className={styles.backIcon} onClick={handleBack}>
+          <IoArrowBackSharp />
         </div>
-      ))}
-      <button onClick={handleSave} style={{ marginTop: "20px" }}>
-        Save and Go to Dashboard
-      </button>
+        <h2 className={styles.heading}>Settings</h2>
+        <div className={styles.checkboxGroup}>
+          {settingsConfig.map((setting) => (
+            <label key={setting.name} className={styles.checkbox}>
+              <input
+                type="checkbox"
+                name={setting.name}
+                checked={settings[setting.name as keyof typeof settings]}
+                onChange={handleChange}
+              />
+              {setting.label}
+            </label>
+          ))}
+        </div>
+        <button onClick={handleSave} className={styles.button}>
+          Save
+        </button>
+      </div>
     </div>
   );
 };

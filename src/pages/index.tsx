@@ -6,12 +6,15 @@ import Table from "@/components/Table";
 import styles from "../styles/home.module.css";
 import { IoSettingsSharp } from "react-icons/io5";
 import { useRouter } from "next/navigation";
+import Navbar from "@/components/Navbar";
+import ExpenseDonutChart from "@/components/ExpenseDonutChart";
 
 const Dashboard = () => {
   const [settings, setSettings] = useState({
     showWeatherChart: true,
     showCompanyChart: true,
     showMarketShareChart: true,
+    showExpenseDonutChart: true,
     showTable: true,
   });
   const router = useRouter();
@@ -29,20 +32,26 @@ const Dashboard = () => {
 
   return (
     <div className={styles.pageWrapper}>
+      <Navbar />
       <div className={styles.chartWapper}>
         {settings.showWeatherChart && (
-          <div className={styles.weatherChart}>
+          <div className={styles.chart}>
             <WeatherChart />
           </div>
         )}
         {settings.showCompanyChart && (
-          <div className={styles.weatherChart}>
+          <div className={styles.chart}>
             <CompanyChart />
           </div>
         )}
         {settings.showMarketShareChart && (
-          <div className={styles.weatherChart}>
+          <div className={styles.chart}>
             <MarketShareChart />
+          </div>
+        )}
+        {settings.showExpenseDonutChart && (
+          <div className={styles.chart}>
+            <ExpenseDonutChart />
           </div>
         )}
       </div>

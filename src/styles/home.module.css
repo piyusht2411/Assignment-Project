@@ -6,11 +6,13 @@
     flex-wrap: wrap;
     gap:30px;
     width: 100%;
+    padding: 20px 0;
   }
-  .weatherChart{
+  .chart{
     width:40%;
     max-width: 800px;
     padding: 20px;
+    padding-top: 0;
     margin: 10px;
     box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   }
@@ -18,7 +20,7 @@
   .settingsIconWrapper{
     position: fixed;
     bottom: 10%;
-    right: 5%;
+    right: 2%;
     border: 2px solid;
     padding: 10px;
     background: white;
@@ -28,4 +30,20 @@
     align-items: center;
     font-size: 30px;
     cursor: pointer;
+  }
+
+  .nav{
+    background: #a139a1;
+    color: white;
+    padding: 1px 15px;
+  }
+
+  @media screen and (max-width: 750px) {
+    .chartWapper {
+      justify-content: center;
+    }
+    .chart{
+      width: 90%;
+    }
+    
   }

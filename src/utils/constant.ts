@@ -64,7 +64,19 @@ export const pieChartOptions = {
     },
 };
 
-
+export const donutChartOptions = {
+    responsive: true,
+    plugins: {
+        legend: {
+            position: 'bottom' as const,
+        },
+        title: {
+            display: false,
+            text: 'Company Expenses Distribution',
+        },
+    },
+    cutout: '70%',
+};
 
 export const weatherData = {
     labels: ['10:00', '13:00', '16:00', '19:00', '22:00', '01:00', '04:00'],
@@ -81,6 +93,11 @@ export const marketShareData = {
     shares: [30, 25, 20, 25],
 };
 
+export const expenseData = {
+    labels: ['Salaries', 'Rent', 'Utilities', 'Marketing', 'R&D'],
+    expenses: [40, 20, 10, 15, 15],
+};
+
 export const tableData = [
     { id: 1, name: 'John Doe', age: 28, position: 'Software Engineer', salary: '$120,000' },
     { id: 2, name: 'Jane Smith', age: 32, position: 'Project Manager', salary: '$135,000' },
@@ -90,8 +107,9 @@ export const tableData = [
 ];
 
 export const settingsConfig = [
-    { name: "showWeatherChart", label: "Show Weather Chart" },
-    { name: "showCompanyChart", label: "Show Company Chart" },
-    { name: "showMarketShareChart", label: "Show Market Share Chart" },
-    { name: "showTable", label: "Show Table" },
+    { name: "showWeatherChart", label: "Weather Chart" },
+    { name: "showCompanyChart", label: "Company Chart" },
+    { name: "showMarketShareChart", label: "Market Share Chart" },
+    { name: "showExpenseDonutChart", label: "Expense Chart" },
+    { name: "showTable", label: "Table" },
 ];

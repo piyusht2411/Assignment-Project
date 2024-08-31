@@ -13,6 +13,7 @@ import {
 } from "chart.js";
 import { weatherChartOptions } from "../utils/constant";
 import { weatherData } from "../utils/constant";
+import styles from "../styles/chart.module.css";
 
 ChartJS.register(
   CategoryScale,
@@ -40,7 +41,8 @@ const WeatherChart: React.FC = () => {
   };
 
   return (
-    <div style={{ width: "100%" }}>
+    <div className={styles.chartWrapper}>
+      <h2>Weather Report</h2>
       <Line data={chartData} options={weatherChartOptions} />
     </div>
   );

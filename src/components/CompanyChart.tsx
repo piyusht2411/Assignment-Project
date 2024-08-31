@@ -11,6 +11,7 @@ import {
 } from "chart.js";
 import { barChartOptions } from "../utils/constant";
 import { companyProfitData } from "../utils/constant";
+import styles from "../styles/chart.module.css";
 
 ChartJS.register(
   CategoryScale,
@@ -36,7 +37,8 @@ const CompanyChart: React.FC = () => {
   };
 
   return (
-    <div style={{ width: "100%" }}>
+    <div className={styles.chartWrapper}>
+      <h2>Company Profit</h2>
       <Bar data={chartData} options={barChartOptions} />
     </div>
   );
